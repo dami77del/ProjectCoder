@@ -13,7 +13,7 @@ const NewPlaceScreen = ({navigation, route}) => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [image, setImage] = useState()
-  const [location, setLocation] = useState()
+    const [location, setLocation] = useState()
 
 
   useEffect(() => {
@@ -22,8 +22,6 @@ const NewPlaceScreen = ({navigation, route}) => {
 
 
     const handleTitleChange = text => setTitle(text)
-
-
 
     const handleSave = () => {
         dispatch(addPlace(title, image,location))

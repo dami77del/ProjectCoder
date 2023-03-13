@@ -26,7 +26,7 @@ const OnboardingNextStep = ({ navigation  }) => {
           <Text style={TEXTBTNTRANS}>Zurückkehren</Text>
         </TouchableOpacity >
         <View style={{ width: 15 }}></View>
-        <TouchableOpacity style={BTN} onPress={() => console.log("to home")}>
+        <TouchableOpacity style={BTN} onPress={() => navigation.navigate("Direcciones")}>
           <Text style={TEXTBTN}>Fortsetzen</Text>
         </TouchableOpacity >
       </View>
