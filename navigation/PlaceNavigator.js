@@ -11,11 +11,16 @@ import PlaceDetailScreen from '../screens/PlaceDetailScreen'
 import NewPlaceScreen from '../screens/NewPlaceScreen'
 import MapScreen from '../screens/MapScreen'
 
+import OnboardingPresentation from '../screens/OnboardingPresentation'
+import OnboardingLegal from '../screens/OnboardingLegal'
+import OnboardingNextStep from '../screens/OnboardingNextStep'
+
 
 const PlaceStack = createNativeStackNavigator()
 
 const PlaceNavigator = () => (
     <PlaceStack.Navigator
+    initialRouteName="Präsentation"
         screenOptions={{
             headerStyle: {
                 backgroundColor: Platform.OS === 'android' ? COLORS.DARK_SIENNA : '',
@@ -53,6 +58,17 @@ const PlaceNavigator = () => (
             name="Map"
             component={MapScreen}
             options={{title: 'Mapa'}} 
+        />
+
+    <PlaceStack.Screen
+        name="Präsentation" component={OnboardingPresentation}
+        />
+        
+    <PlaceStack.Screen
+     name="Legal" component={OnboardingLegal}
+        />
+         <PlaceStack.Screen
+     name="NächsteStufe" component={OnboardingNextStep} 
         />
     </PlaceStack.Navigator>
 )
