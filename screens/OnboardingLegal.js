@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFonts } from 'expo-font'
 import { Image, StyleSheet, Text, SafeAreaView, View, TouchableOpacity } from 'react-native'
-import ImgNotification from '../images/data.png'
+import ImgNotification from '../images/img_selected.png'
 import { SIZES, COLORBTN, TEXTBTN, BTN, TEXTBTNTRANS, CONTAINER, TITLE, DESCRIPTION } from '../constants/theme'
 
 const OnboardingLegal = ({ navigation }) => {
@@ -17,9 +17,9 @@ const OnboardingLegal = ({ navigation }) => {
     <View style={CONTAINER}>
       <Image source={ImgNotification} style={{ width: SIZES.width - 10, height: 400 }} resizeMode="contain" />
       <Text style={[TITLE, { fontFamily: 'DancingScript' }]}>
-        Erwartetes Datum
+      Daten hinzufügen
       </Text>
-      <Text style={DESCRIPTION}> Beachten Sie, dass die Reservierungsdaten von der Verfügbarkeit des Personals abhängen und die verfügbaren Stunden variieren können.</Text>
+      <Text style={DESCRIPTION}> Fügen Sie die Filiale mit Namen und Standort hinzu</Text>
       <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: "center", }}>
         <TouchableOpacity style={[BTN, { backgroundColor: 'transparent', borderWidth: 1, borderColor: COLORBTN.primary }]} onPress={() => navigation.navigate("Präsentation")}>
           <Text style={TEXTBTNTRANS}>Unterlassen</Text>

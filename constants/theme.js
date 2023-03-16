@@ -3,7 +3,11 @@ import { Dimensions } from "react-native";
 
 const {width, height} = Dimensions.get('screen');
 
-COLOR,SIZES,COLORBTN,CONTAINER,TITLE,DESCRIPTION, BTN,TEXTBTNTRANS,TEXTBTN
+COLOR,SIZES,COLORBTN,CONTAINER,TITLE,DESCRIPTION, BTN,TEXTBTNTRANS,TEXTBTN, SPACING
+
+
+
+ export const SPACING = 20
 
 export const COLOR = {
     primary:'#f52d56',
@@ -66,3 +70,5 @@ export const CONTAINER= {
     fontWeight:"bold",
     fontSize:15
   }
+
+

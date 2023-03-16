@@ -6,7 +6,7 @@ export const init = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                "create table if not exists address( id integer primary key not null, title text not null, image text not null, address text not null, lat real not null, lng real null);",
+                "create table if not exists filial( id integer primary key not null, title text not null, image text not null, address text not null, lat real not null, lng real null);",
                 [],
                 () => {
                     resolve();
@@ -24,7 +24,7 @@ export const inserAddress = (title, image, address, lat, lng) => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                "insert into address (title, image, address,lat, lng) VALUES (?,?,?,?,?);",
+                "insert into filial (title, image, address,lat, lng) VALUES (?,?,?,?,?);",
                 [title, image, address, lat, lng],
                 (_, result) => resolve(result),
                 (_, err) => reject(err)
@@ -37,7 +37,7 @@ export const inserAddress = (title, image, address, lat, lng) => {
 export const fetchAddress = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
-            tx.executeSql("SELECT * FROM address",
+            tx.executeSql("SELECT * FROM filial",
              [],
                 (_, result) => resolve(result),
                 (_, err) => reject(err)

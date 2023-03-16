@@ -57,11 +57,11 @@ const LocationSelector = props => {
     return (
         <View style={styles.container}>
             <MapPreview location={pickedLocation} style={styles.preview}>
-        <Text> Location en proceso...</Text>
+        <Text>Standort in Bearbeitung...</Text>
       </MapPreview>
       <View  style={styles.actions}>
-            <Button title="obtener ubicacion" color={COLORS.PEACH_PUFF} onPress={handleGetLocation} />
-            <Button title="Elegir del mapa" color={COLORS.PEACH_PUFF} onPress={handlePickOnMap} />
+            <Button title="Standort bekommen" color={COLORS.LILA} onPress={handleGetLocation} />
+            <Button title="aus Karte wählen" color={COLORS.LILA} onPress={handlePickOnMap} />
             </View>
         </View>
     )
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         height: 200,
         justifyContent: "center",
         alignItems: 'center',
-        borderColor: COLORS.BLUSH,
+        borderColor: COLORS.LILA,
         borderWidth: 1,
     },
     actions: {

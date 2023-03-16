@@ -32,10 +32,10 @@ const ImageSelector = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.preview}>
-                {!pickerUri ? (<Text>No hay imagen Seleccionada</Text>) : (<Image source={{ uri: pickerUri }} style={styles.image} />
+                {!pickerUri ? (<Text>Kein Bild ausgewählt</Text>) : (<Image source={{ uri: pickerUri }} style={styles.image} />
                 )}
             </View>
-            <Button title="tomar foto" color={COLORS.LIGTH_PINK} onPress={handleTakeImage} />
+            <Button title="Foto machen" color={COLORS.LILA} onPress={handleTakeImage} />
         </View>
     )
 }
@@ -53,12 +53,13 @@ const styles = StyleSheet.create({
         height: 200,
         justifyContent:"center",
         alignItems:'center',
-        borderColor:COLORS.BLUSH,
+        borderColor:COLORS.LILA,
         borderWidth:1,
     },
     image:{
         width:"100%",
-        height:'100%'
+        height:'100%',
+        borderColor:COLORS.LILA,
     }
 
 })

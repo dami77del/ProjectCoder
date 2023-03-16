@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFonts } from 'expo-font'
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import ImgNotification from '../images/notificacion.png'
+import ImgNotification from '../images/pres_img.png'
 import {SIZES,COLORBTN, TEXTBTN, BTN, TEXTBTNTRANS, CONTAINER,TITLE,DESCRIPTION} from '../constants/theme'
 
 const OnboardingPresentation = ({ navigation }) => {
@@ -17,9 +17,9 @@ const OnboardingPresentation = ({ navigation }) => {
     <View style={CONTAINER}>
       <Image source={ImgNotification} style={{ width: SIZES.width - 10, height: 400 }} resizeMode="contain" />
       <Text style={[TITLE,  { fontFamily:'DancingScript' }] }>
-      Vorherige Empfehlung
+      Empfehlungen
       </Text>
-      <Text style={DESCRIPTION}> Vielen Dank, dass Sie sich für DOWAS angemeldet haben. Bitte behalten Sie diese Informationen im Hinterkopf.</Text>
+      <Text style={DESCRIPTION}> Dank hier können Sie den entsprechenden Zweig hinzufügen.</Text>
       <View style={{flexDirection:'row',  justifyContent:'center', alignItems:"center",}}>
         <TouchableOpacity style={[BTN, { backgroundColor:'transparent',borderWidth:1, borderColor:COLORBTN.primary }]} onPress={() => navigation.navigate("Legal")}>
           <Text style={TEXTBTNTRANS}>Unterlassen</Text>
