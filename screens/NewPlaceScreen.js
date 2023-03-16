@@ -25,17 +25,17 @@ const NewPlaceScreen = ({navigation, route}) => {
 
     const handleSave = () => {
         dispatch(addPlace(title, image,location))
-        navigation.navigate("Direcciones")
+        navigation.navigate("Filial")
     }
 
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.label}>Titulo</Text>
+                <Text style={styles.label}>Filial</Text>
                 <TextInput style={styles.input} onChangeText={ handleTitleChange}/>
          <ImageSelector onImage={setImage}/>
          <LocationSelector onLocation={setLocation}  mapLocation={route?.params?.mapLocation}/>
-                <Button title=" Guardar Direccion" color={ COLORS.MAROON} onPress={handleSave}/>
+                <Button title=" Adresse speichern" color={ COLORS.LIGHT_LILA} onPress={handleSave}/>
             </View>
         </ScrollView>
     )

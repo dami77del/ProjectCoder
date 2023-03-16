@@ -21,7 +21,7 @@ const MapScreen = ({navigation}) => {
       };
        const handleSaveLocation =() =>{
         if (selectedLocation) {
-            navigation.navigate("Nuevo", {mapLocation:selectedLocation})
+            navigation.navigate("New", {mapLocation:selectedLocation})
         }
        }
 

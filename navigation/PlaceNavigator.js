@@ -16,6 +16,7 @@ import OnboardingLegal from '../screens/OnboardingLegal'
 import OnboardingNextStep from '../screens/OnboardingNextStep'
 
 
+
 const PlaceStack = createNativeStackNavigator()
 
 const PlaceNavigator = () => (
@@ -23,52 +24,61 @@ const PlaceNavigator = () => (
     initialRouteName="Präsentation"
         screenOptions={{
             headerStyle: {
-                backgroundColor: Platform.OS === 'android' ? COLORS.DARK_SIENNA : '',
+                backgroundColor: Platform.OS === 'android' ? COLORS.LILA : '',
             },
-            headerTintColor: Platform.OS === 'android' ? 'white' : COLORS.DARK_SIENNA,
+            headerTintColor: Platform.OS === 'android' ? 'white' : COLORS.LILA,
             headerTitleStyle: {
                 fontWeight: 'bold',
             }
         }}
     >
         <PlaceStack.Screen
-            name="Direcciones"
+            name="Filial"
             component={PlaceListScreen}
             options={({navigation}) =>({
-            title:'Direcciones',
+            title:'Filial',
             headerRight:() =>(
-                <TouchableOpacity onPress={()=> navigation.navigate('Nuevo')}>
-                    <Ionicons name='md-add' color={Platform.OS === "android" ? 'white' : COLORS.DARK_SIENNA} size={23}/>
+                <TouchableOpacity onPress={()=> navigation.navigate('New')}>
+                    <Ionicons name='md-add' color={Platform.OS === "android" ? 'white' : COLORS.LILA} size={23}/>
                 </TouchableOpacity>
             )
 
             })} 
         />
         <PlaceStack.Screen
-            name="Detalle"
+            name="Detail"
             component={PlaceDetailScreen}
-            options={{title: 'Detalle direccion'}} 
+            options={{title: 'Einzelheiten'}} 
         />
         <PlaceStack.Screen
-            name="Nuevo"
+            name="New"
             component={NewPlaceScreen}
-            options={{title: 'Nueva direccion'}} 
+            options={({navigation}) =>({
+                title:'New Addrese',
+                headerRight:() =>(
+                    <TouchableOpacity onPress={()=> navigation.navigate('Präsentation')}>
+                        <Ionicons name='home-outline' color={Platform.OS === "android" ? 'white' : COLORS.LILA} size={23}/>
+                    </TouchableOpacity>
+                )
+    
+                })} 
         />
         <PlaceStack.Screen
             name="Map"
             component={MapScreen}
             options={{title: 'Mapa'}} 
         />
+        
 
     <PlaceStack.Screen
-        name="Präsentation" component={OnboardingPresentation}
+        name="Präsentation" component={OnboardingPresentation}  options={{headerShown:false}} 
         />
         
-    <PlaceStack.Screen
-     name="Legal" component={OnboardingLegal}
+    <PlaceStack.Screen 
+     name="Legal" component={OnboardingLegal} options={{headerShown:false}} 
         />
          <PlaceStack.Screen
-     name="NächsteStufe" component={OnboardingNextStep} 
+     name="NächsteStufe" component={OnboardingNextStep}  options={{headerShown:false}} 
         />
     </PlaceStack.Navigator>
 )
